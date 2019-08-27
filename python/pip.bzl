@@ -24,7 +24,7 @@ def _pip_import_impl(repository_ctx):
 
     # To see the output, pass: quiet=False
     result = repository_ctx.execute([
-        "python",
+        "python3",
         repository_ctx.path(repository_ctx.attr._script),
         "--name",
         repository_ctx.attr.name,
@@ -98,6 +98,7 @@ Args:
 
 def pip_repositories():
     """Pull in dependencies needed to use the packaging rules."""
+
     # At the moment this is a placeholder, in that it does not actually pull in
     # any dependencies. However, it does do some validation checking.
     #
